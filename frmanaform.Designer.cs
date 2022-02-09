@@ -29,6 +29,7 @@ namespace h_dden
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmanaform));
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.picIsleme = new System.Windows.Forms.PictureBox();
@@ -47,6 +48,8 @@ namespace h_dden
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bilgilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iletişimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIsleme)).BeginInit();
             this.bunifuGroupBox2.SuspendLayout();
@@ -80,7 +83,7 @@ namespace h_dden
             this.picIsleme.Location = new System.Drawing.Point(3, 23);
             this.picIsleme.Name = "picIsleme";
             this.picIsleme.Size = new System.Drawing.Size(966, 314);
-            this.picIsleme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picIsleme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picIsleme.TabIndex = 0;
             this.picIsleme.TabStop = false;
             // 
@@ -290,6 +293,20 @@ namespace h_dden
             this.iletişimToolStripMenuItem.Text = "iletişim";
             this.iletişimToolStripMenuItem.Click += new System.EventHandler(this.iletişimToolStripMenuItem_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.menuStrip1;
+            this.bunifuDragControl2.Vertical = true;
+            // 
             // frmanaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -340,5 +357,7 @@ namespace h_dden
         private System.Windows.Forms.ToolStripMenuItem bilgilerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iletişimToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
     }
 }

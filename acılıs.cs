@@ -19,6 +19,7 @@ namespace h_dden
             InitializeComponent();
         }
 
+        //açılış animasyonu 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (this.Opacity > 0.0)
@@ -38,6 +39,11 @@ namespace h_dden
         private void acılıs_Load(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

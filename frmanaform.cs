@@ -10,6 +10,14 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 
 
+/*    
+Hljóðs bið ek allar helgar kindir,
+meiri ok minni mögu Heimdallar;
+viltu at ek, Valföðr, vel fyr telja
+forn spjöll fíra, þau er fremst um man.
+ */
+
+
 namespace h_dden
 {
     public partial class frmanaform : Form
@@ -25,7 +33,8 @@ namespace h_dden
         {
             OpenFileDialog dialog = new OpenFileDialog();
 
-            dialog.Filter = "Resim Dosyaları (*.png,*.bmp,*.jpg,*.gif)|*.png;*.bmp;*.jpg;*.gif";
+            dialog.Filter = "Resim Dosyaları (*.png,*.bmp,*.jpg,*.gif)|*.png;*.bmp;*.jpg;*.gif"; 
+            //gif çalışmıyor sanırım! 
 
 
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -58,7 +67,7 @@ namespace h_dden
            
                 bmp = (Bitmap)picIsleme.Image;
                 string yazi = txtMesaj.Text;
-                bmp = StegoIslem.yaziGizle(yazi, bmp);
+                bmp = Stego.yaziGizle(yazi, bmp);
                 MessageBox.Show("İşlendi. Resmi Kaydetmeyi unutmayın!");
 
                  
@@ -82,20 +91,25 @@ namespace h_dden
                     case 0:
                         {
                             bmp.Save(save_dialog.FileName, ImageFormat.Png);
+                            MessageBox.Show("Kaydedildi!", "no problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     case 1:
                         {
                             bmp.Save(save_dialog.FileName, ImageFormat.Bmp);
+                            MessageBox.Show("Kaydedildi!", "no problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
 
                     case 2:
                         {
                             bmp.Save(save_dialog.FileName, ImageFormat.Gif);
+                            MessageBox.Show("Kaydedildi inş!", "galiba problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //çalışmayabilir
                         }
                         break;
 
+                      
 
 
                 }
@@ -107,7 +121,7 @@ namespace h_dden
         private void btnCoz_Click(object sender, EventArgs e)
         {
             bmp = (Bitmap)picIsleme.Image;
-            string coz = StegoIslem.Coz(bmp);
+            string coz = Stego.Coz(bmp);
             txtMesaj.Text = "";
             txtMesaj.Text = coz;
         }
