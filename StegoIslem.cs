@@ -5,9 +5,9 @@ using System.Drawing;
 
 namespace h_dden
 {
-    class StegoIslem
+    class Stego
     {
-        #region Enum
+        #region sabit
         //Enum program içerisinde belirleyeceğim sabitlerin anlamlandırılıp tutulması işii görür
         public enum Durum
         {
@@ -19,9 +19,9 @@ namespace h_dden
         #region Yazı Gizleme Kodu
         public static Bitmap yaziGizle(string yazi, Bitmap bmp)
         {
-            Durum durum = Durum.Gizle;//Başlangıçta resimde karakterleri gizliyorum
+            Durum durum = Durum.Gizle; // resimde karakterleri gizliyorum
 
-            int charIndex = 0; //Gizlenenen karakterin dizinini tutacak
+            int charIndex = 0; //Gizlenenen karakterin dizinini tutan değişken
 
             int charValue = 0; //Tam sayıya dönüştürülmüş karakterin değerini tutar
 
@@ -29,12 +29,12 @@ namespace h_dden
 
             int sifirSayisi = 0;//Süreç işlenip bittikten sonra eklenen son sıfırların sayısını tutar.
 
-            int R = 0, G = 0, B = 0;//Piksel değerini tutacak
+            int R = 0, G = 0, B = 0;//Piksel renk değerini tutacak
 
 
           
 
-            for (int i = 0; i < bmp.Height; i++)
+            for (int i = 0; i < bmp.Height; i++)  //görsel boyutlarını alıyorum
             {
                 for (int j = 0; j < bmp.Width; j++)
                 {
@@ -45,7 +45,7 @@ namespace h_dden
 
                     for (int n = 0; n < 3; n++) //Her piksel elemanını inceleyip işlem yapacağım
                     {
-                        if (pixelElementIndex % 8 == 0)//8 bit işlendimi diye kontrol ediyorum
+                        if (pixelElementIndex % 8 == 0)//8 bit işlendi mi diye kontrol ediyorum
                         {
                             if (durum == Durum.sifirUzunluk && sifirSayisi == 8)//8 bit işlenince 8 sıfır ekle. Bu şekilde çözülürken sadece mesajı görmüş olacağım
                             {
@@ -63,7 +63,7 @@ namespace h_dden
                             {
                                 charValue = yazi[charIndex++];//Bir sonraki karaktere geçip tekrar işlem yapma kısmı
 
-                                Console.WriteLine(charValue);
+                                Console.WriteLine(charValue); 
                             }
                         }
 
@@ -118,7 +118,7 @@ namespace h_dden
 
             }
 
-            return bmp;
+            return bmp; 
            
         }
         #endregion
@@ -128,6 +128,7 @@ namespace h_dden
         #region yazı çözme
         public static string Coz(Bitmap bmp)
         {
+            
             int colorUnitIndex = 0;
             int charVal = 0;
             string cikarilanYazi = "";//Çıkarılacak metni tutacağım
