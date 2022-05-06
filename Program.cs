@@ -16,7 +16,7 @@ namespace h_dden
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new acılıs());
+            Application.Run(new frmanaform());
         }
     }
 }

@@ -152,18 +152,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="acılıs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="acılıs.Designer.cs">
-      <DependentUpon>acılıs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formtht.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formtht.Designer.cs">
-      <DependentUpon>formtht.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmanaform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,12 +161,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StegoIslem.cs" />
-    <EmbeddedResource Include="acılıs.resx">
-      <DependentUpon>acılıs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formtht.resx">
-      <DependentUpon>formtht.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmanaform.resx">
       <DependentUpon>frmanaform.cs</DependentUpon>
     </EmbeddedResource>

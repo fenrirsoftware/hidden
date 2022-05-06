@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 
 
+
 /*    
 Hljóðs bið ek allar helgar kindir,
 meiri ok minni mögu Heimdallar;
@@ -29,38 +30,70 @@ namespace h_dden
             InitializeComponent();
         }
 
+        int lsb1, lsb2;
         private void btnAc_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.ShowDialog();
 
-            dialog.Filter = "Resim Dosyaları (*.png,*.bmp,*.jpg,*.gif)|*.png;*.bmp;*.jpg;*.gif"; 
-            //gif çalışmıyor sanırım! 
+            dialog.Filter = "Resim Dosyaları (*.png,*.bmp,*.jpg)|*.png;*.bmp;*.jpg;";
 
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            dialog.RestoreDirectory = true;
+            dialog.Title = "Dosya Seçiniz..";
+            
+
+            string yol;
+            yol = dialog.SafeFileName;
+
+
+
+            if (string.IsNullOrWhiteSpace(yol))
+            {
+                MessageBox.Show("geçersiz yol");
+            }
+
+            else
             {
                 picIsleme.Image = Image.FromFile(dialog.FileName);
-                btnGizle.Enabled = true;
-            }
-            int lsb1, lsb2;
-            for (int i = 0; i < picIsleme.Height; i++)
-            {
-                for (int j = 0; j < picIsleme.Width; j++)
+
+                
+               
+               
+                for (int i = 0; i < picIsleme.Image.Height; i++)
                 {
-                    lsb1 = picIsleme.Height * picIsleme.Width * 3;
-                    lsb2 = lsb1 / 8;
-                    toolStripSayi.Text = lsb2.ToString();
+                    for (int j = 0; j < picIsleme.Image.Width; j++)
+                    {
+                        lsb1 = picIsleme.Image.Height * picIsleme.Image.Width * 3;
+                        lsb2 = lsb1 / 8;
+                        toolStripSayi.Text = lsb2.ToString();
+
+                        
+                    
+                    }
+
                 }
+                btnAc.Enabled = true;
+                btnCoz.Enabled = true;
+                btnGizle.Enabled = true;
+                btnKaydet.Enabled = true;
+                txtMesaj.Enabled = true;
+                txtMesaj.Text = "";
+
             }
-          
-            btnAc.Enabled = true;
-            btnCoz.Enabled = true;
-            btnGizle.Enabled = true;
-            btnKaydet.Enabled = true;
-       
-           
             
+           
+
+
         }
+
+    
+
+
+
+
+
+    
 
         private void btnGizle_Click(object sender, EventArgs e)
         {
@@ -82,7 +115,7 @@ namespace h_dden
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             SaveFileDialog save_dialog = new SaveFileDialog();
-            save_dialog.Filter = "Png Image|*.png|Bitmap Image|*.bmp|Gif Image|*.gif";
+            save_dialog.Filter = "Png Image|*.png|Bitmap Image|*.bmp";
 
             if (save_dialog.ShowDialog() == DialogResult.OK)
             {
@@ -101,13 +134,7 @@ namespace h_dden
                         }
                         break;
 
-                    case 2:
-                        {
-                            bmp.Save(save_dialog.FileName, ImageFormat.Gif);
-                            MessageBox.Show("Kaydedildi inş!", "galiba problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //çalışmayabilir
-                        }
-                        break;
+                
 
                       
 
@@ -133,9 +160,7 @@ namespace h_dden
 
         private void iletişimToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formtht = new formtht();
-            formtht.Show();
-
+            
         }
 
         private void bilgilerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,6 +174,21 @@ namespace h_dden
         }
 
         private void frmanaform_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuProgressBar1_ProgressChanged(object sender, Bunifu.UI.WinForms.BunifuProgressBar.ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuGroupBox1_Enter(object sender, EventArgs e)
         {
 
         }

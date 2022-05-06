@@ -21,6 +21,8 @@ namespace h_dden
         {
             Durum durum = Durum.Gizle; // resimde karakterleri gizliyorum
 
+
+            //değişken tanımlama
             int charIndex = 0; //Gizlenenen karakterin dizinini tutan değişken
 
             int charValue = 0; //Tam sayıya dönüştürülmüş karakterin değerini tutar
@@ -149,7 +151,7 @@ namespace h_dden
                              */
                             case 0:
                                 {
-                                    charVal = charVal * 2 + pixel.R % 2;//Kırmızı pikselde bulunan en önemsi bit. Bu bit işlenmiş bittir
+                                    charVal = charVal * 2 + pixel.R % 2;//Kırmızı pikselde bulunan en önemsiz bit. Bu bit işlenmiş bittir
                                 }
                                 break;
                             case 1:

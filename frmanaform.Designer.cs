@@ -75,6 +75,7 @@ namespace h_dden
             this.bunifuGroupBox1.TabIndex = 0;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "görsel";
+            this.bunifuGroupBox1.Enter += new System.EventHandler(this.bunifuGroupBox1_Enter);
             // 
             // picIsleme
             // 
@@ -149,6 +150,7 @@ namespace h_dden
             // txtMesaj
             // 
             this.txtMesaj.BackColor = System.Drawing.Color.Black;
+            this.txtMesaj.Enabled = false;
             this.txtMesaj.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtMesaj.ForeColor = System.Drawing.Color.LimeGreen;
             this.txtMesaj.Location = new System.Drawing.Point(7, 6);
@@ -157,6 +159,7 @@ namespace h_dden
             this.txtMesaj.Name = "txtMesaj";
             this.txtMesaj.Size = new System.Drawing.Size(599, 167);
             this.txtMesaj.TabIndex = 1;
+            this.txtMesaj.Text = "text here";
             // 
             // bunifuGroupBox2
             // 
